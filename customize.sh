@@ -68,13 +68,13 @@ fi
 ui_print "- Kernel BTF matched"
 ui_print "- Edit hideport.conf if your package or ports differ"
 
+rm -rf "$MODPATH/service.d" "$MODPATH/hide_scene_port.sh"
+
 # ── Permissions ──
 set_permissions() {
     set_perm_recursive "$MODPATH" 0 0 0755 0644
     set_perm "$MODPATH/post-fs-data.sh" 0 0 0755
     set_perm "$MODPATH/service.sh" 0 0 0755
     set_perm "$MODPATH/hideport_start.sh" 0 0 0755
-    set_perm "$MODPATH/hide_scene_port.sh" 0 0 0755
-    set_perm "$MODPATH/service.d/hide_scene_port.sh" 0 0 0755
     set_perm "$MODPATH/system/bin/hideport_loader" 0 0 0755
 }
